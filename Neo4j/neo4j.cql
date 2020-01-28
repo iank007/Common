@@ -48,3 +48,7 @@ optional match (s:School) with collect(s) + c2 as c3
 unwind c3 as n
 match (n)-[r]-(u:Student)
 delete r return count(r) as m;
+
+// Delete
+// for millions nodes
+// use apoc.periodic.iterate to detach-delete neo4j for safe;
